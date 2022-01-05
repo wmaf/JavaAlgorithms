@@ -30,8 +30,22 @@ public class Main {
         System.out.println(existsHigher(new int[]{1, 2, 3, 4, 5}, 8));
 
 //  #9 How Many Vowels?
-        System.out.println(getCount("Palm"));
+        System.out.println(getCount("BuBBa"));
 
+//  #10 Return the Sum of Two Numbers
+        System.out.println(sum(12, 5));
+
+// #11 Are the Numbers Equal?
+        System.out.println(isSameNum(5, 1));
+
+// #12 Convert Age to Days
+        System.out.println(calcAge(20));
+
+// #13 Name Greeting!
+        System.out.println(helloName("Bill"));
+
+// #14 Reverse the Order of a String
+        System.out.println(reverse("Think Amazing."));
     }
 
     //    -----------------------Code-------------------------------------------
@@ -77,6 +91,7 @@ public class Main {
     public static int countWords(String s) {
         return s.split(" ").length;
     }
+
     // #8 Exists a Number Higher?
     public static boolean existsHigher(int[] arr, int n) {
         for (int i = 0; i < arr.length; i++) {
@@ -91,7 +106,7 @@ public class Main {
     public static int getCount(String str) {
         int vowelsCount = 0;
 
-        // Your code here
+        //  Cheat had general idea with .length did think of using charAt() with index i.
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'a' || str.charAt(i) == 'e' || str.charAt(i) == 'i'
                     || str.charAt(i) == 'o' || str.charAt(i) == 'u') {
@@ -101,4 +116,38 @@ public class Main {
         }
         return vowelsCount;
     }
+
+    //  #10 Return the Sum of Two Numbers
+    public static int sum(int a, int b) {
+        return a + b;
+    }
+
+    // #11 Are the Numbers Equal?
+    public static boolean isSameNum(int x, int y) {
+        return x == y;
+    }
+
+    // #12 Convert Age to Days
+    public static int calcAge(int age) {
+        int days = 365;
+        return days * age;
+    }
+
+    // #13  Name Greeting!
+    public static String helloName(String name) {
+        return "Hello " + name +"!";
+    }
+
+    // #14 Reverse the Order of a String
+    public static String reverse(final String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
 }
+
+
+
+
+
+
+
+
