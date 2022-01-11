@@ -53,8 +53,11 @@ public class Main {
 // #16 Count Syllables
         System.out.println(numberSyllables("buf-fet"));
 
+// #17 Case Insensitive Comparison
+        System.out.println(match("hey", "hey"));
 
-
+// #18 H4ck3r Sp34k
+        System.out.println(hackerSpeak("become a coder"));
 
     }
 
@@ -146,25 +149,43 @@ public class Main {
     // #13  Name Greeting!
     public static String helloName(String name) {
 
-        return "Hello " + name +"!";
+        return "Hello " + name + "!";
     }
 
     // #14 Reverse the Order of a String
     public static String reverse(final String str) {
         return new StringBuilder(str).reverse().toString();
     }
+
     // #15 Two Makes Ten
     public static boolean makesTen(int a, int b) {
-        if ( a+b == 10 || a == 10 ||b == 10) {
+        if (a + b == 10 || a == 10 || b == 10) {
             return true;
         }
         return false;
     }
+
     // #16 Count Syllables
-       public static int numberSyllables(String word) {
+    public static int numberSyllables(String word) {
         int funny = word.split("-").length;
         return funny;
     }
+
+    // #17  Case Insensitive Comparison
+    public static boolean match(String str1, String str2) {
+        return str1.equalsIgnoreCase(str2);
+    }
+
+    // #18 H4ck3r Sp34k
+    public static String hackerSpeak(String str) {
+        return str
+                .replace('a', '4')
+                .replace('e', '3')
+                .replace('i', '1')
+                .replace('o', '0')
+                .replace('s', '5');
+    }
+
 }
 
 
