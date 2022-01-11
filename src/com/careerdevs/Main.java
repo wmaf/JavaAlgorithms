@@ -70,12 +70,11 @@ public class Main {
 
     // #2 Return the Next Number from the Integer Passed (nextnumber.js)
     public static int addition(int num) {
-        int plusOne = ++num;
-        return plusOne;
+        return ++num;
     }
 
     //  #3 Find the Index (findtheindex.js)
-    public static int search(int arr[], int item) {
+    public static int search(int[] arr, int item) {
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == item) {
                 return i;
@@ -86,8 +85,7 @@ public class Main {
 
     // #4 Convert Minutes into Seconds (mintosec.js)
     public static int convert(int minutes) {
-        int converted = minutes * 60;
-        return converted;
+        return minutes * 60;
     }
 
     // #5 Return Something to Me! (returnsomthing.js)
@@ -107,10 +105,8 @@ public class Main {
 
     // #8 Exists a Number Higher?
     public static boolean existsHigher(int[] arr, int n) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] >= n) return true;
-            else {
-            }
+        for (int j : arr) {
+            if (j >= n) return true;
         }
         return false;
     }
@@ -159,16 +155,12 @@ public class Main {
 
     // #15 Two Makes Ten
     public static boolean makesTen(int a, int b) {
-        if (a + b == 10 || a == 10 || b == 10) {
-            return true;
-        }
-        return false;
+        return a + b == 10 || a == 10 || b == 10;
     }
 
     // #16 Count Syllables
     public static int numberSyllables(String word) {
-        int funny = word.split("-").length;
-        return funny;
+        return word.split("-").length;
     }
 
     // #17  Case Insensitive Comparison
