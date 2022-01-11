@@ -46,6 +46,16 @@ public class Main {
 
 // #14 Reverse the Order of a String
         System.out.println(reverse("Think Amazing."));
+
+// #15 Two Makes Ten
+        System.out.println(makesTen(9, 9));
+
+// #16 Count Syllables
+        System.out.println(numberSyllables("buf-fet"));
+
+
+
+
     }
 
     //    -----------------------Code-------------------------------------------
@@ -135,6 +145,7 @@ public class Main {
 
     // #13  Name Greeting!
     public static String helloName(String name) {
+
         return "Hello " + name +"!";
     }
 
@@ -142,7 +153,21 @@ public class Main {
     public static String reverse(final String str) {
         return new StringBuilder(str).reverse().toString();
     }
+    // #15 Two Makes Ten
+    public static boolean makesTen(int a, int b) {
+        if ( a+b == 10 || a == 10 ||b == 10) {
+            return true;
+        }
+        return false;
+    }
+    // #16 Count Syllables
+       public static int numberSyllables(String word) {
+        int funny = word.split("-").length;
+        return funny;
+    }
 }
+
+
 
 
 
