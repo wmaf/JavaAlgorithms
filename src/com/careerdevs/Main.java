@@ -58,7 +58,8 @@ public class Main {
 
 // #18 H4ck3r Sp34k
         System.out.println(hackerSpeak("become a coder"));
-
+// #19 Recursion
+                System.out.println(recursive.aggregate(5));
     }
 
     //    -----------------------Code-------------------------------------------
@@ -178,6 +179,15 @@ public class Main {
                 .replace('s', '5');
     }
 
+//    #19 Recursion
+    public class recursive {
+        public static int aggregate(int n) {
+            int aggregate=0;
+            for(int i=1;i<=n;i++)
+                aggregate+=i;
+            return aggregate;
+        }
+    }
 }
 
 
