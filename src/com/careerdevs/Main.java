@@ -58,8 +58,11 @@ public class Main {
 
 // #18 H4ck3r Sp34k
         System.out.println(hackerSpeak("become a coder"));
-// #19 Recursion
-                System.out.println(recursive.aggregate(5));
+
+// #19 Countdown Homework
+        System.out.println(countDown.countToZero(581));
+// #19 Recursion Homework
+        System.out.println(recursive.aggregate(50));
     }
 
     //    -----------------------Code-------------------------------------------
@@ -179,17 +182,26 @@ public class Main {
                 .replace('s', '5');
     }
 
-//    #19 Recursion
+// #19 Countdown Homework
+    public class countDown {
+        public static int countToZero(int n) {
+         int cntDown = 0;
+            for (int i = n; i > -1; i--)
+                cntDown = i;
+                return cntDown;
+
+        }
+    }
+//    #19 Recursion edabit
     public class recursive {
         public static int aggregate(int n) {
-            int aggregate=0;
-            for(int i=1;i<=n;i++)
-                aggregate+=i;
+            int aggregate = 0;
+            for (int i = 1; i <= n; i++)
+                aggregate += i;
             return aggregate;
         }
     }
 }
-
 
 
 
