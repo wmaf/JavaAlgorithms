@@ -61,7 +61,7 @@ public class Main {
 
 // #19 Countdown Homework
         System.out.println(countDown.countToZero(581));
-// #19 Recursion Homework
+// #20 Recursion Homework
         System.out.println(recursive.aggregate(50));
     }
 
