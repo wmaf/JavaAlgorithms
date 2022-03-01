@@ -61,7 +61,7 @@ public class Main {
 
 // #19 Countdown Homework
         System.out.println(countDown.countToZero(581));
-// #19 Recursion Homework
+// #20 Recursion Homework
         System.out.println(recursive.aggregate(50));
     }
 
@@ -192,7 +192,7 @@ public class Main {
 
         }
     }
-//    #20 Recursion edabit
+//    #20 Recursion edabit!
     public class recursive {
         public static int aggregate(int n) {
             int aggregate = 0;
