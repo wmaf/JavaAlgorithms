@@ -1,10 +1,12 @@
 package com.careerdevs;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
 
-//--------------------------Output------------------------------------------
+//--------------------------Output------------------------------------------//
 //  #1 Return the First Element in an Array (getfirstelement.js)
         System.out.println(getFirstElement(new int[]{3, 1, 4}));
 
@@ -61,11 +63,15 @@ public class Main {
 
 // #19 Countdown Homework
         System.out.println(countDown.countToZero(581));
+
 // #20 Recursion Homework
         System.out.println(recursive.aggregate(50));
+
+// #21 Number Split
+        halfSplit.numberSplit(-21);
     }
 
-    //    -----------------------Code-------------------------------------------
+    //    -----------------------Code-------------------------------------------//
 
     //  #1 Return the First Element in an Array (getfirstelement.js)
     public static int getFirstElement(int[] arr) {
@@ -115,7 +121,7 @@ public class Main {
         return false;
     }
 
-    //  #9 How Many Vowels?
+    // #9 How Many Vowels?
     public static int getCount(String str) {
         int vowelsCount = 0;
 
@@ -130,7 +136,7 @@ public class Main {
         return vowelsCount;
     }
 
-    //  #10 Return the Sum of Two Numbers
+    // #10 Return the Sum of Two Numbers
     public static int sum(int a, int b) {
         return a + b;
     }
@@ -182,26 +188,36 @@ public class Main {
                 .replace('s', '5');
     }
 
-// #19 Countdown Homework
+    // #19 Countdown Homework
     public class countDown {
         public static int countToZero(int n) {
          int cntDown = 0;
             for (int i = n; i > -1; i--)
                 cntDown = i;
                 return cntDown;
-
         }
     }
-//    #20 Recursion edabit!!!!
+    //    #20 Recursion edabit!!!!
     public class recursive {
-        public static int aggregate(int n) {
-            int aggregate = 0;
-            for (int i = 1; i <= n; i++)
-                aggregate += i;
-            return aggregate;
+    public static int aggregate(int n) {
+        int aggregate = 0;
+        for (int i = 1; i <= n; i++)
+            aggregate += i;
+        return aggregate;
+        }
+    }
+    //     #21   Number Split
+    public class halfSplit {
+        public static int[] numberSplit(int n) {
+            //System.out.println("test");
+            int [] splitArr = new int [] {(int)Math.floor(n/2.0), (int)Math.ceil(n/2.0)};
+            System.out.println(Arrays.toString(splitArr));
+            return splitArr;
         }
     }
 }
+
+
 
 
 
