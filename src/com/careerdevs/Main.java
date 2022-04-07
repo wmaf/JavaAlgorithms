@@ -28,7 +28,7 @@ public class Main {
 //  #7 Get Word Count
         System.out.println(countWords("How are you today?"));
 
-//  #8
+//  #8  Exists a Number Higher?
         System.out.println(existsHigher(new int[]{1, 2, 3, 4, 5}, 8));
 
 //  #9 How Many Vowels?
@@ -69,6 +69,14 @@ public class Main {
 
 // #21 Number Split
         halfSplit.numberSplit(-21);
+
+//  #22
+        System.out.println(Transcription.dnaToRna("GATTACCA"));
+
+//  #23  Array of Multiples
+        Program.arrayOfMultiples(7, 5);
+
+
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -191,33 +199,59 @@ public class Main {
     // #19 Countdown Homework
     public class countDown {
         public static int countToZero(int n) {
-         int cntDown = 0;
+            int cntDown = 0;
             for (int i = n; i > -1; i--)
                 cntDown = i;
-                return cntDown;
+            return cntDown;
         }
     }
+
     //    #20 Recursion edabit!!!!
     public class recursive {
-    public static int aggregate(int n) {
-        int aggregate = 0;
-        for (int i = 1; i <= n; i++)
-            aggregate += i;
-        return aggregate;
+        public static int aggregate(int n) {
+            int aggregate = 0;
+            for (int i = 1; i <= n; i++)
+                aggregate += i;
+            return aggregate;
         }
     }
+
     //     #21   Number Split
     public class halfSplit {
         public static int[] numberSplit(int n) {
             //System.out.println("test");
-            int [] splitArr = new int [] {(int)Math.floor(n/2.0), (int)Math.ceil(n/2.0)};
+            int[] splitArr = new int[]{(int) Math.floor(n / 2.0), (int) Math.ceil(n / 2.0)};
             System.out.println(Arrays.toString(splitArr));
             return splitArr;
         }
     }
-}
 
+    //    #22  https://edabit.com/challenge/aPmfBKu7ixcsYYKaZ   ( Replace All )
+    //      A, T, G and C, while RNA converts to U, A, C and G respectively.
+    public class Transcription {
+        public static String dnaToRna(String strand) {
+            return strand
+                    .replaceAll("A", "U")
+                    .replaceAll("T", "A")
+                    .replaceAll("G", "X")
+                    .replaceAll("C", "G")
+                    .replaceAll("X", "C");
+        }}
+    //  #23  Array of Multiples   https://edabit.com/challenge/rzpucPyoyEtXPo2BG
+        public class Program {
+            public static int[] arrayOfMultiples(int num, int length) {
+                int[] nums = new int[length];
+                for (int i = 0; i < nums.length; i++) {
+                    nums[i] = num * (i + 1);  // a * (b + 1) or zero  + 1 ....
+                }
+                System.out.println(Arrays.toString(nums)); // to verify outcome.
+                return nums;
+            }
+        }
+    }
 
+   // public static Currency getInstance(String currencyCode);
+   //public static Currency getInstance(Locale locale);
 
 
 
