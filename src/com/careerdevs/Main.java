@@ -76,6 +76,10 @@ public class Main {
 //  #23  Array of Multiples
         Program.arrayOfMultiples(7, 5);
 
+//    #24 Missing HW weekending  4/10
+
+//  #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
+        Program.NumericString.add("555", "666");
 
     }
 
@@ -236,19 +240,51 @@ public class Main {
                     .replaceAll("G", "X")
                     .replaceAll("C", "G")
                     .replaceAll("X", "C");
-        }}
+        }
+    }
+
     //  #23  Array of Multiples   https://edabit.com/challenge/rzpucPyoyEtXPo2BG
-        public class Program {
-            public static int[] arrayOfMultiples(int num, int length) {
-                int[] nums = new int[length];
-                for (int i = 0; i < nums.length; i++) {
-                    nums[i] = num * (i + 1);  // a * (b + 1) or zero  + 1 ....
-                }
-                System.out.println(Arrays.toString(nums)); // to verify outcome.
-                return nums;
+    public class Program {
+        public static int[] arrayOfMultiples(int num, int length) {
+            int[] nums = new int[length]; // length is now nums and = to 5 and can be used as a counter.
+            for (int i = 0; i < nums.length; i++) {
+                nums[i] = num * (i + 1);  // a * (b + 1) or zero  + 1 ....(remember outer arr is to equal zero.)
+            }
+            System.out.println(Arrays.toString(nums)); // Array to string to verify outcome.
+            return nums;
+        }
+
+        // #25  https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
+        public class NumericString {
+           public static String add(String a, String b) {
+              try {
+                  // return Integer.toString((Integer.parseInt(a) + Integer.parseInt(b)));  Another option for toString.
+                  final var s = String.valueOf((Integer.parseInt(a) + Integer.parseInt(b)));
+                  System.out.println(s);
+                  return s;
+              }
+              catch(Exception e){
+                  return "Invalid Operation";
+              }
             }
         }
     }
+}
+
+
+//https://www.google.com/search?q=convert+int+to+string&rlz=1C1PRFI_enUS986US986&oq=convert+int+to+string&aqs=chrome..69i57j0i512l9.5754j0j15&sourceid=chrome&ie=UTF-8
+//  parseInt(String s) − This returns an integer (decimal only).
+// parseInt(int i) − This returns an integer, given a string representation of decimal, binary, octal, or hexadecimal (radix equals 10, 2, 8, or 16 respectively) numbers as input.
+// if append with a "+ "" string it automatically converts to string
+
+
+
+
+
+
+
+
+
 
    // public static Currency getInstance(String currencyCode);
    //public static Currency getInstance(Locale locale);
