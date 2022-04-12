@@ -76,7 +76,8 @@ public class Main {
 //  #23  Array of Multiples
         Program.arrayOfMultiples(7, 5);
 
-//    #24 Missing HW weekending  4/10
+//    #24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
+        Program.countTrue(new boolean[] { false, false, true, false });
 
 //  #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         Program.NumericString.add("555", "666");
@@ -253,8 +254,16 @@ public class Main {
             System.out.println(Arrays.toString(nums)); // Array to string to verify outcome.
             return nums;
         }
+    //  # 24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
+    public static int countTrue(boolean[] arr) {
+        int count=0;
+        for(int i=0;i<arr.length;i++)
+            if(arr[i]==true) count++;
+        System.out.println(count);
+        return count;
 
-        // #25  https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
+    }
+        // #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         public class NumericString {
            public static String add(String a, String b) {
               try {
