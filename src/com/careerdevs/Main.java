@@ -84,6 +84,9 @@ public class Main {
         Program.NumericString.add("555", "666");
 //  #26 https://edabit.com/challenge/SQC525f4Wqn6F4LNC   Get the Sum of All Array Elements
         Program.arraySum(new int[]{45, 3, 0});
+
+// #27 Area of a Triangle
+        Program.triArea(5, 4);
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -284,6 +287,13 @@ public class Main {
             System.out.println(sum);
                  return sum;
              }
+       // #27    Area of a Triangle
+        public static int triArea(int base, int height) {
+            int result = base * height / 2;
+            System.out.println(result);
+                    return result;
+
+            }
         }
     }
 
