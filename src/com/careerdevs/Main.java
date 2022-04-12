@@ -1,6 +1,7 @@
 package com.careerdevs;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Main {
 
@@ -81,7 +82,8 @@ public class Main {
 
 //  #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         Program.NumericString.add("555", "666");
-
+//  #26 https://edabit.com/challenge/SQC525f4Wqn6F4LNC   Get the Sum of All Array Elements
+        Program.arraySum(new int[]{45, 3, 0});
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -265,20 +267,26 @@ public class Main {
     }
         // #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         public class NumericString {
-           public static String add(String a, String b) {
-              try {
-                  // return Integer.toString((Integer.parseInt(a) + Integer.parseInt(b)));  Another option for toString.
-                  final var s = String.valueOf((Integer.parseInt(a) + Integer.parseInt(b)));
-                  System.out.println(s);
-                  return s;
-              }
-              catch(Exception e){
-                  return "Invalid Operation";
-              }
+            public static String add(String a, String b) {
+                try {
+                    // return Integer.toString((Integer.parseInt(a) + Integer.parseInt(b)));  Another option for toString.
+                    final var s = String.valueOf((Integer.parseInt(a) + Integer.parseInt(b)));
+                    System.out.println(s);
+                    return s;
+                } catch (Exception e) {
+                    return "Invalid Operation";
+                }
             }
         }
+        // #26    https://edabit.com/challenge/SQC525f4Wqn6F4LNC
+        public static int arraySum(int [] arr) {
+             int sum = IntStream.of(arr).sum();
+            System.out.println(sum);
+                 return sum;
+             }
+        }
     }
-}
+
 
 
 //https://www.google.com/search?q=convert+int+to+string&rlz=1C1PRFI_enUS986US986&oq=convert+int+to+string&aqs=chrome..69i57j0i512l9.5754j0j15&sourceid=chrome&ie=UTF-8
