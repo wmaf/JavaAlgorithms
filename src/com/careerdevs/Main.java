@@ -1,6 +1,7 @@
 package com.careerdevs;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -78,15 +79,18 @@ public class Main {
         Program.arrayOfMultiples(7, 5);
 
 //    #24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
-        Program.countTrue(new boolean[] { false, false, true, false });
+        Program.countTrue(new boolean[]{false, false, true, false});
 
 //  #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         Program.NumericString.add("555", "666");
 //  #26 https://edabit.com/challenge/SQC525f4Wqn6F4LNC   Get the Sum of All Array Elements
         Program.arraySum(new int[]{45, 3, 0});
 
-// #27 Area of a Triangle
+// #27 https://edabit.com/challenge/B4HjZbBh9yuELmjna Area of a Triangle
         Program.triArea(5, 4);
+
+// #28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S
+        Program.difference(new int[]{-5, 6, 18, 4, 16, -2});
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -259,15 +263,17 @@ public class Main {
             System.out.println(Arrays.toString(nums)); // Array to string to verify outcome.
             return nums;
         }
-    //  # 24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
-    public static int countTrue(boolean[] arr) {
-        int count=0;
-        for(int i=0;i<arr.length;i++)
-            if(arr[i]==true) count++;
-        System.out.println(count);
-        return count;
 
-    }
+        //  # 24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
+        public static int countTrue(boolean[] arr) {
+            int count = 0;
+            for (int i = 0; i < arr.length; i++)
+                if (arr[i] == true) count++;
+            System.out.println(count);
+            return count;
+
+        }
+
         // #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
         public class NumericString {
             public static String add(String a, String b) {
@@ -281,22 +287,39 @@ public class Main {
                 }
             }
         }
+
         // #26    https://edabit.com/challenge/SQC525f4Wqn6F4LNC
-        public static int arraySum(int [] arr) {
-             int sum = IntStream.of(arr).sum();
+        public static int arraySum(int[] arr) {
+            int sum = IntStream.of(arr).sum();
             System.out.println(sum);
-                 return sum;
-             }
-       // #27    Area of a Triangle
+            return sum;
+        }
+
+        // #27    https://edabit.com/challenge/B4HjZbBh9yuELmjna Area of a Triangle
         public static int triArea(int base, int height) {
             int result = base * height / 2;
             System.out.println(result);
-                    return result;
-
-            }
+            return result;
+        }
+        // # 28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S  Maximum Difference
+        public static int difference(Integer[] nums) {
+            int min = Collections.min(Arrays.asList(nums));
+            int max = Collections.max(Arrays.asList(nums));
+            int minMaxTotal = min - max;
+            System.out.println(minMaxTotal);
+                    return minMaxTotal;
+        }
+// 0r we can SORT it and add the first and last elements of the array.
+            public static int difference(int[] nums) {
+               Arrays.sort(nums);
+               int min = nums[0];
+               int max = nums[nums.length-1];
+               int totalMinMax = min - max;
+               System.out.println(totalMinMax);
+                     return totalMinMax;
         }
     }
-
+}
 
 
 //https://www.google.com/search?q=convert+int+to+string&rlz=1C1PRFI_enUS986US986&oq=convert+int+to+string&aqs=chrome..69i57j0i512l9.5754j0j15&sourceid=chrome&ie=UTF-8
