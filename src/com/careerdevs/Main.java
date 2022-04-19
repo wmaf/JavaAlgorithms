@@ -91,6 +91,8 @@ public class Main {
 
 // #28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S
         Program.difference(new int[]{-5, 6, 18, 4, 16, -2});
+// #29 https://edabit.com/challenge/aWzxPLibBLJgn8AbZ  Exsist Higher
+        existsHigher(new int[] {5, 3, 15, 22, 4}, 10);
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -300,6 +302,7 @@ public class Main {
             int result = base * height / 2;
             System.out.println(result);
             return result;
+
         }
         // # 28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S  Maximum Difference
         public static int difference(Integer[] nums) {
@@ -318,12 +321,22 @@ public class Main {
                System.out.println(totalMinMax);
                      return totalMinMax;
         }
+        //   #29    https://edabit.com/challenge/aWzxPLibBLJgn8AbZ
+        public class ExistsANumberHigher {
+            public static boolean existsHigher(Integer[] arr, int n) {
+                int max = Collections.max(Arrays.asList(arr));
+                if (n > max) {
+                    return true;
+                }
+                return false;
+            }
+        }
     }
 }
 
 
 //https://www.google.com/search?q=convert+int+to+string&rlz=1C1PRFI_enUS986US986&oq=convert+int+to+string&aqs=chrome..69i57j0i512l9.5754j0j15&sourceid=chrome&ie=UTF-8
-//  parseInt(String s) − This returns an integer (decimal only).
+// parseInt(String s) − This returns an integer (decimal only).
 // parseInt(int i) − This returns an integer, given a string representation of decimal, binary, octal, or hexadecimal (radix equals 10, 2, 8, or 16 respectively) numbers as input.
 // if append with a "+ "" string it automatically converts to string
 
