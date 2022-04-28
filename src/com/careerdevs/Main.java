@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.stream.IntStream;
 
+import static com.careerdevs.Main.Program.ExistsANumberHigher.differenceMaxMin;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -78,7 +80,7 @@ public class Main {
 //  #23  Array of Multiples
         Program.arrayOfMultiples(7, 5);
 
-//    #24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
+//  #24 https://edabit.com/challenge/vKpGt4ufSKmEJ3Xjd How Much is True?
         Program.countTrue(new boolean[]{false, false, true, false});
 
 //  #25 https://edabit.com/challenge/vFLhYANAZQGKTtxA2   (Adding Numbers)
@@ -86,11 +88,22 @@ public class Main {
 //  #26 https://edabit.com/challenge/SQC525f4Wqn6F4LNC   Get the Sum of All Array Elements
         Program.arraySum(new int[]{45, 3, 0});
 
-// #27 https://edabit.com/challenge/B4HjZbBh9yuELmjna Area of a Triangle
+//  #27 https://edabit.com/challenge/B4HjZbBh9yuELmjna Area of a Triangle
         Program.triArea(5, 4);
 
-// #28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S
+//  #28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S
         Program.difference(new int[]{-5, 6, 18, 4, 16, -2});
+
+        // #29 https://edabit.com/challenge/aWzxPLibBLJgn8AbZ  Exsist Higher
+        existsHigher(new int[]{5, 3, 15, 22, 4}, 10);
+//  #30
+        Program.ExistsANumberHigher.Challenge.doubleLetters("yummy");
+
+//  #31 https://edabit.com/challenge/hymPkXdhmDQLe87QT
+        differenceMaxMin(new int[]{-70, 43, 34, 54, 22});
+
+//  # 32 https://edabit.com/challenge/5gPCp7v7iDWZvb4YQ
+        reverse("Think different.");
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -318,8 +331,58 @@ public class Main {
                System.out.println(totalMinMax);
                      return totalMinMax;
         }
+        //   #29    https://edabit.com/challenge/aWzxPLibBLJgn8AbZ
+        public class ExistsANumberHigher {
+            public static boolean existsHigher(Integer[] arr, int n) {
+                int max = Collections.max(Arrays.asList(arr));
+                if (n > max) return true;
+                else if (n < max || arr == null) {
+                    return false;
+                }
+                return false;
+            }
+
+            //   #30
+            public class Challenge {
+                public static boolean doubleLetters(String word) {
+                    for (int i = 1; i < word.length() - 1; i++) {
+                        if (word.charAt(i - 1) == word.charAt(i)) {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+            }
+
+            //  #31 https://edabit.com/challenge/hymPkXdhmDQLe87QT
+            //public class difference {
+                public static int differenceMaxMin(int[] arr) {
+                    int smallest = arr[0];
+                    int biggest = arr[0];
+                    for (int i = 1; i < arr.length; i++) {
+                        if (arr[i] > biggest)
+                            biggest = arr[i];
+                        else if (arr[i] < smallest)
+                            smallest = arr[i];
+                    }
+                    System.out.println(biggest - smallest);
+                    return biggest;
+                }
+
+                // # 32 https://edabit.com/challenge/5gPCp7v7iDWZvb4YQ
+                public static String reverse(final String str) {
+                    String reverse = "";
+                    for (int i = str.length() - 1; i >= 0; i--) {
+                        reverse = reverse + str.charAt(i);
+                    }
+                    return reverse;
+                }
+            }
+            //   return string[::-1]  Python
+
+        }
     }
-}
+
 
 
 //https://www.google.com/search?q=convert+int+to+string&rlz=1C1PRFI_enUS986US986&oq=convert+int+to+string&aqs=chrome..69i57j0i512l9.5754j0j15&sourceid=chrome&ie=UTF-8
