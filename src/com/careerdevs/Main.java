@@ -96,7 +96,7 @@ public class Main {
 
         // #29 https://edabit.com/challenge/aWzxPLibBLJgn8AbZ  Exsist Higher
         existsHigher(new int[]{5, 3, 15, 22, 4}, 10);
-//  #30
+//  #30  Has double letters
         Program.ExistsANumberHigher.Challenge.doubleLetters("yummy");
 
 //  #31 https://edabit.com/challenge/hymPkXdhmDQLe87QT
@@ -104,6 +104,12 @@ public class Main {
 
 //  # 32 https://edabit.com/challenge/5gPCp7v7iDWZvb4YQ
         reverse("Think different.");
+
+//  # 33 https://edabit.com/challenge/R3PnRquBPADEqDxZg
+        getWord("reli", "able");
+
+//  # 34
+    calculateScores("ABC");
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -331,7 +337,7 @@ public class Main {
                System.out.println(totalMinMax);
                      return totalMinMax;
         }
-        //   #29    https://edabit.com/challenge/aWzxPLibBLJgn8AbZ
+        //   #29    https://edabit.com/challenge/aWzxPLibBLJgn8AbZ  Exists A Number Higher
         public class ExistsANumberHigher {
             public static boolean existsHigher(Integer[] arr, int n) {
                 int max = Collections.max(Arrays.asList(arr));
@@ -342,7 +348,7 @@ public class Main {
                 return false;
             }
 
-            //   #30
+            //   #30  Has double letters
             public class Challenge {
                 public static boolean doubleLetters(String word) {
                     for (int i = 1; i < word.length() - 1; i++) {
@@ -381,7 +387,36 @@ public class Main {
             //   return string[::-1]  Python
 
         }
+        // #33 https://edabit.com/challenge/R3PnRquBPADEqDxZg
+        //public class Challenge {
+                public static String getWord(String left, String right) {
+                    return left.substring(0,1).toUpperCase() + left.substring(1) + right;
+                }
+        // #34
+        public static int[] calculateScores(String str) {
+            int[] score= new int[3];
+            score = new int[]{0,1,2};
+            for (char c: str.toCharArray()) {
+                switch(c){
+                    case 'A':
+                        score[0]++;break;
+                    case 'B':
+                        score[1]++;break;
+                    case 'C':
+                        score[2]++;break;
+                    }
+                }
+            System.out.println(Arrays.toString(score));
+            return score;
+        }
+/* def calculate_scores(txt):
+    return [txt.count('A'),txt.count('B'),txt.count('C')] */
     }
+
+
+
+
+
 
 
 
