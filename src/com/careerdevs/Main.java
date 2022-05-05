@@ -110,6 +110,9 @@ public class Main {
 
 //  # 34
     calculateScores("ABC");
+
+//  # 35
+     isAvgWhole(new int[]{1, 1, 1, 1});
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -393,6 +396,8 @@ public class Main {
                     return left.substring(0,1).toUpperCase() + left.substring(1) + right;
                 }
         // #34
+    /* def calculate_scores(txt):
+    return [txt.count('A'),txt.count('B'),txt.count('C')] */
         public static int[] calculateScores(String str) {
             int[] score= new int[3];
             score = new int[]{0,1,2};
@@ -409,9 +414,20 @@ public class Main {
             System.out.println(Arrays.toString(score));
             return score;
         }
-/* def calculate_scores(txt):
-    return [txt.count('A'),txt.count('B'),txt.count('C')] */
+//# 35     https://edabit.com/challenge/yk7GqGcCpFgQrk8fH        Is the Average of All Elements a Whole Number?
+    // Py =
+    //  def is_avg_whole(arr):
+    //	return sum(arr) % len(arr) == 0
+        public static boolean isAvgWhole(int[] arr) {
+
+            int sum = 0;
+            for(int value : arr) {
+                sum += value;
+            }
+            System.out.println(sum % arr.length == 0);
+            return sum % arr.length == 0;
     }
+}
 
 
 
