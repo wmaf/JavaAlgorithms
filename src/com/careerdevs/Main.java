@@ -109,10 +109,17 @@ public class Main {
         getWord("reli", "able");
 
 //  # 34
-    calculateScores("ABC");
+        calculateScores("ABC");
 
 //  # 35
-     isAvgWhole(new int[]{1, 1, 1, 1});
+        isAvgWhole(new int[]{1, 1, 1, 1});
+
+// # 36
+        getFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3");
+
+//  Class work - https://edabit.com/challenge/FHJ7SPdj7hChTS5LW
+        countUnique("sore", "zebra");
+        firstVowel("hello");
     }
 
     //    -----------------------Code-------------------------------------------//
@@ -323,23 +330,26 @@ public class Main {
             System.out.println(result);
             return result;
         }
+
         // # 28 https://edabit.com/challenge/wmXdzBSsoT4QvEY3S  Maximum Difference
         public static int difference(Integer[] nums) {
             int min = Collections.min(Arrays.asList(nums));
             int max = Collections.max(Arrays.asList(nums));
             int minMaxTotal = min - max;
             System.out.println(minMaxTotal);
-                    return minMaxTotal;
+            return minMaxTotal;
         }
-// 0r we can SORT it and add the first and last elements of the array.
-            public static int difference(int[] nums) {
-               Arrays.sort(nums);
-               int min = nums[0];
-               int max = nums[nums.length-1];
-               int totalMinMax = min - max;
-               System.out.println(totalMinMax);
-                     return totalMinMax;
+
+        // 0r we can SORT it and add the first and last elements of the array.
+        public static int difference(int[] nums) {
+            Arrays.sort(nums);
+            int min = nums[0];
+            int max = nums[nums.length - 1];
+            int totalMinMax = min - max;
+            System.out.println(totalMinMax);
+            return totalMinMax;
         }
+
         //   #29    https://edabit.com/challenge/aWzxPLibBLJgn8AbZ  Exists A Number Higher
         public class ExistsANumberHigher {
             public static boolean existsHigher(Integer[] arr, int n) {
@@ -365,72 +375,117 @@ public class Main {
 
             //  #31 https://edabit.com/challenge/hymPkXdhmDQLe87QT
             //public class difference {
-                public static int differenceMaxMin(int[] arr) {
-                    int smallest = arr[0];
-                    int biggest = arr[0];
-                    for (int i = 1; i < arr.length; i++) {
-                        if (arr[i] > biggest)
-                            biggest = arr[i];
-                        else if (arr[i] < smallest)
-                            smallest = arr[i];
-                    }
-                    System.out.println(biggest - smallest);
-                    return biggest;
+            public static int differenceMaxMin(int[] arr) {
+                int smallest = arr[0];
+                int biggest = arr[0];
+                for (int i = 1; i < arr.length; i++) {
+                    if (arr[i] > biggest)
+                        biggest = arr[i];
+                    else if (arr[i] < smallest)
+                        smallest = arr[i];
                 }
-
-                // # 32 https://edabit.com/challenge/5gPCp7v7iDWZvb4YQ
-                public static String reverse(final String str) {
-                    String reverse = "";
-                    for (int i = str.length() - 1; i >= 0; i--) {
-                        reverse = reverse + str.charAt(i);
-                    }
-                    return reverse;
-                }
+                System.out.println(biggest - smallest);
+                return biggest;
             }
-            //   return string[::-1]  Python
 
-        }
-        // #33 https://edabit.com/challenge/R3PnRquBPADEqDxZg
-        //public class Challenge {
-                public static String getWord(String left, String right) {
-                    return left.substring(0,1).toUpperCase() + left.substring(1) + right;
+            // # 32 https://edabit.com/challenge/5gPCp7v7iDWZvb4YQ
+            public static String reverse(final String str) {
+                String reverse = "";
+                for (int i = str.length() - 1; i >= 0; i--) {
+                    reverse = reverse + str.charAt(i);
                 }
-        // #34
+                return reverse;
+            }
+        }
+        //   return string[::-1]  Python
+
+    }
+
+    // #33 https://edabit.com/challenge/R3PnRquBPADEqDxZg
+    //public class Challenge {
+    public static String getWord(String left, String right) {
+        return left.substring(0, 1).toUpperCase() + left.substring(1) + right;
+    }
+
+    // #34
     /* def calculate_scores(txt):
     return [txt.count('A'),txt.count('B'),txt.count('C')] */
-        public static int[] calculateScores(String str) {
-            int[] score= new int[3];
-            score = new int[]{0,1,2};
-            for (char c: str.toCharArray()) {
-                switch(c){
-                    case 'A':
-                        score[0]++;break;
-                    case 'B':
-                        score[1]++;break;
-                    case 'C':
-                        score[2]++;break;
-                    }
-                }
-            System.out.println(Arrays.toString(score));
-            return score;
+    public static int[] calculateScores(String str) {
+        int[] score;
+        score = new int[]{0, 1, 2};
+        for (char c : str.toCharArray()) {
+            switch (c) {
+                case 'A':
+                    score[0]++;
+                    break;
+                case 'B':
+                    score[1]++;
+                    break;
+                case 'C':
+                    score[2]++;
+                    break;
+            }
         }
-//# 35     https://edabit.com/challenge/yk7GqGcCpFgQrk8fH        Is the Average of All Elements a Whole Number?
+        System.out.println(Arrays.toString(score));
+        return score;
+    }
+
+    //# 35     https://edabit.com/challenge/yk7GqGcCpFgQrk8fH        Is the Average of All Elements a Whole Number?
     // Py =
     //  def is_avg_whole(arr):
     //	return sum(arr) % len(arr) == 0
-        public static boolean isAvgWhole(int[] arr) {
+    public static boolean isAvgWhole(int[] arr) {
 
-            int sum = 0;
-            for(int value : arr) {
-                sum += value;
-            }
-            System.out.println(sum % arr.length == 0);
-            return sum % arr.length == 0;
+        int sum = 0;
+        for (int value : arr) {
+            sum += value;
+        }
+        System.out.println(sum % arr.length == 0);
+        return sum % arr.length == 0;
     }
+
+    //  #36 https://edabit.com/challenge/hgHMhpJjyFxYJMMXp Class Alg..  return full path
+    public static String getFilename(String path) {
+        String[] fullPath = path.split("/");
+        System.out.println(Arrays.toString(fullPath));
+        return fullPath[fullPath.length - 1];
+    }
+    // Py --- return path.split('/')[-1]
+
+    //  # 37  https://edabit.com/challenge/ryEdPW2eqyngyWayy
+    public static String spaceMeOut(String str) {
+        return str.replace("", " ").trim();
+    }
+    // Py --- 	return s.replace("", " ")[1:-1]
+
+    public static int countUnique(String s1, String s2) {
+        int result = (int) (s1 + s2).chars().distinct().count();
+        System.out.println(result);
+        return result;
+    }
+
+    public static int firstVowel(String str) {
+        for (int i = 0; i < str.length(); i++) {
+            switch (str.charAt(i)) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    return i;
+                default:
+                    break;
+            }
+        }
+        return 0;
+    }
+    public static StringBuilder reverse(int[] arr) {
+        return new StringBuilder(String.valueOf(arr)).reverse();
+    }
+
+// Py -- for (int i = arr.length - 1; i >= 0; i--) {
+//   return (arr[i]);
 }
-
-
-
 
 
 
